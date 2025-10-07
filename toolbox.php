@@ -32,9 +32,32 @@ function esPrimo(int $n): bool{
 }
 
 function palabraMasLarga(string $texto): string{
-    $palabra;
+
+    $textoLimpio = str_replace(",", " ", $texto);
+    //$textoLimpio = preg_replace('/[^\p{L}\p{N}\s]/u', ' ', $texto);
+
+
+    $palabras = explode(' ', $textoLimpio);
+
+    $palabraMasLarga = '';
+
+    foreach ($palabras as $palabra) {
+        if (strlen($palabra) > strlen($palabraMasLarga)) {
+            $palabraMasLarga = $palabra;
+        }
+    }
+
+    return $palabraMasLarga;
 }
 
 function estadisticas(float ...$nums): array{
-    
+    $min = min($nums);
+    $max = max($nums);
+    $media = array_sum($nums) / count($nums);
+
+    return [
+        'min' => $min,
+        'max' => $max,
+        'media' => $media
+    ];
 }
