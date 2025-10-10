@@ -1,26 +1,52 @@
 <?php
 
-$nombre = $_POST['nombre'];
-$edad = $_GET['edad'];
-$email = $_GET['email'];
 
 
-if ($_POST['nombre'] != '')
-{
+    $email  = $_POST['email'];
+    $nombre = $_POST['nombre'];
+    $edad   = $_POST['edad'];
 
-    $mensaje = "
-        <div class=\"alert alert-primary\" role=\"alert\">
-            ¡Hola, {$_POST['nombre']}!
-        </div>
-    ";
+    $errores = false;
 
-    if (strlen($_POST['nombre']) < 5)
-    {
-        $mensaje = "
-            <div class=\"alert alert-danger\" role=\"alert\">
-                El número de caracteres \"{$_POST['nombre']}\" debe ser superior o igual a 5.
-            </div>
-        ";
+    $error_nombre = $error_email = $error_edad = '';
+
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $errores = true;
+
+        $error_email =" error_email ";
     }
 
-}
+
+    if (empty($nombre))
+    {
+        $errores = true;
+
+        $error_nombre =" error_nombre ";
+    }
+
+
+    if (!is_numeric($edad))
+    {
+        $errores = true;
+
+        $error_edad =" error_edad ";
+    }
+
+    $mostrar_errores = '';
+    if($errores)
+    {
+        $mostrar_errores = '
+        <div class="alert alert-danger" role="alert">
+          Hay errores en el formulario
+        </div>
+        ';
+    }
+    else{
+
+        $disabled = ' disabled ';
+    }
+
+    require "./formulario2.php";
+
+
+?>
