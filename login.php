@@ -6,7 +6,7 @@ $usuario  = $_POST['nombre'];
 
 $_SESSION['usuario'] = $usuario;
 
-if ($_SESSION != null) {
+if ($_SESSION['usuario'] != null) {
     header("Location: bienvenida.php");
 }
 
