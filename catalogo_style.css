@@ -1,0 +1,9 @@
+.catalogo {
+    display: flex;
+}
+
+.cartelera {
+    margin: 10px;
+    width: 500px;
+    text-align: center;
+}
