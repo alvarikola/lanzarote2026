@@ -1,55 +1,72 @@
 <?php
+
+// require "includes/peliculas.php";
+
+
+$tipos_categoria = [
+    'F' => 'Fantasía',
+    'CF' => 'Ciencia Ficción',
+    'C' => 'Comedia',
+    'A' => 'Acción',
+    'S' => 'Slasher'
+];
+
+$genero  = $GET['generos'];
+
 $peliculas = [
     [
         "titulo" => "El Señor de los Anillos: La Comunidad del Anillo",
         "director" => "Peter Jackson",
         "anio" => 2001,
-        "genero" => "Fantasía",
+        "genero" => "F",
         "poster" => "imagenes/señorAnillosposter.jpg"
     ],
     [
         "titulo" => "Inception",
         "director" => "Christopher Nolan",
         "anio" => 2010,
-        "genero" => "Ciencia Ficción",
+        "genero" => "CF",
         "poster" => "imagenes/inceptionposter.jpg"
     ],
     [
         "titulo" => "Cars",
         "director" => "John Lasseter",
         "anio" => 2006,
-        "genero" => "Comedia",
+        "genero" => "C",
         "poster" => "imagenes/carsposter.webp"
     ],
     [
         "titulo" => "The Amazing Spider-Man",
         "director" => "Marc Webb",
         "anio" => 2012,
-        "genero" => "Acción",
+        "genero" => "A",
         "poster" => "imagenes/spidermanposter.jpg"
     ],
     [
         "titulo" => "Scream",
         "director" => "Wes Craven",
         "anio" => 1996,
-        "genero" => "Slasher",
+        "genero" => "S",
         "poster" => "imagenes/screamposter.webp"    
     ],
     [
         "titulo" => "Jurassic Park",
         "director" => "Steven Spielberg",
         "anio" => 1993,
-        "genero" => "Ciencia Ficción",
+        "genero" => "CF",
         "poster" => "imagenes/jurassicposter.jpg"
     ],
 ];
-echo "<div class='catalogo'>";
+$listado_tarjetas_peliculas = '';
 foreach($peliculas as $pelicula) {
-    echo "<div class='cartelera'><h2>$pelicula[titulo]</h2>";
-    echo "<div class='contenedor'><img src='$pelicula[poster]' height=300px>";
-    echo "<ul> <li>Director: $pelicula[director]</li><li>Año: $pelicula[anio]</li><li>Género: $pelicula[genero]</li></ul> </div> </div>";  
+    if ($genero == '' || $genero == $pelicula['genero']) {
+        $listado_tarjetas_peliculas .= "
+            <div class='cartelera'><h2>$pelicula[titulo]</h2>
+            <div class='contenedor'><img src='$pelicula[poster]' height=300px>
+            <ul> <li>Director: $pelicula[director]</li><li>Año: $pelicula[anio]</li><li>Género: $pelicula[genero]</li></ul> </div>
+        ";
+    }
 }
-echo "</div>";
 
 ?>
 
@@ -63,15 +80,21 @@ echo "</div>";
 </head>
 <body>
     <form action="catalogo.php" method="GET" >
-        <label for="idGenero">Género</label>
-        <select name="select">
-            <option value="todos">Todos</option>
-            <option value="fantasia">Fantasía</option>
-            <option value="cienciaFiccion" selected>Ciencia Ficción</option>
-            <option value="comedia">Comedia</option>
-            <option value="accion">Acción</option>
-            <option value="slasher">Slasher</option>
+
+        <?php
+            $opciones_categoria = "";
+            foreach($tipos_categoria as $tipo => $nombre_categoria) {
+                $opciones_categorias .= "<option value=\"{$tipo}\">{$nombre_categoria}</option>";
+            }
+        ?>
+        <select name="generos">
+            <option selected>Categoría</option>
+            <?php echo $opciones_categorias; ?>
         </select>
+        <button type="submit">Buscar</button>
     </form>
+    <div class='catalogo'>
+        <?php echo $listado_tarjetas_peliculas; ?>
+    </div>
 </body>
 </html>
