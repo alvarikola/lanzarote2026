@@ -17,17 +17,33 @@
                         <meta name=\"author\" content=\"{$author}\" />
                         <title>{$titulo}</title>
                         <!-- Favicon-->
-                        <link rel=\"icon\" type=\"image/x-icon\" href=\"assets/favicon.ico\" />
-                        <!-- Font Awesome icons (free version)-->
-                        <script src=\"https://use.fontawesome.com/releases/v6.3.0/js/all.js\" crossorigin=\"anonymous\"></script>
-                        <!-- Google fonts-->
-                        <link href=\"https://fonts.googleapis.com/css?family=Montserrat:400,700\" rel=\"stylesheet\" type=\"text/css\" />
-                        <link href=\"https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic\" rel=\"stylesheet\" type=\"text/css\" />
-                        <!-- Core theme CSS (includes Bootstrap)-->
-                        <link href=\"/assets/plantilla/css/styles.css\" rel=\"stylesheet\" />
-                        <link href=\"/css/estilos.css\" rel=\"stylesheet\" />
+                        <link href=\"assets/img/favicon.png\" rel=\"icon\">
+                        <link href=\"assets/img/apple-touch-icon.png\" rel=\"apple-touch-icon\">
+                        <!-- Fonts -->
+                        <link href=\"https://fonts.googleapis.com\" rel=\"preconnect\">
+                        <link href=\"https://fonts.gstatic.com\" rel=\"preconnect\" crossorigin>
+                        <link href=\"https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap\" rel=\"stylesheet\">
+
+                        <!-- Vendor CSS Files -->
+                        <link href=\"assets/vendor/bootstrap/css/bootstrap.min.css\" rel=\"stylesheet\">
+                        <link href=\"assets/vendor/bootstrap-icons/bootstrap-icons.css\" rel=\"stylesheet\">
+                        <link href=\"assets/vendor/aos/aos.css\" rel=\"stylesheet\">
+                        <link href=\"assets/vendor/glightbox/css/glightbox.min.css\" rel=\"stylesheet\">
+                        <link href=\"assets/vendor/swiper/swiper-bundle.min.css\" rel=\"stylesheet\">
+
+                        <!-- Main CSS File -->
+                        <link href=\"assets/css/main.css\" rel=\"stylesheet\">
+
+                        <!-- =======================================================
+                        * Template Name: Impact
+                        * Template URL: https://bootstrapmade.com/impact-bootstrap-business-website-template/
+                        * Updated: Aug 07 2024 with Bootstrap v5.3.3
+                        * Author: BootstrapMade.com
+                        * License: https://bootstrapmade.com/license/
+                        ======================================================== -->
                     </head>
-                    <body id=\"page-top\">
+
+                    <body class=\"index-page\">
             
             ";
         }
@@ -47,7 +63,7 @@
                         </button>
                         <div class=\"collapse navbar-collapse\" id=\"navbarResponsive\">
                             <ul class=\"navbar-nav ms-auto\">
-                                <li class=\"nav-item mx-0 mx-lg-1\"><a class=\"nav-link py-3 px-0 px-lg-3 rounded\" href=\"#portfolio\">Portfolio</a></li>
+                                <li class=\"nav-item mx-0 mx-lg-1\"><a class=\"nav-link py-3 px-0 px-lg-3 rounded\" href=\"#portfolio\">". Idioma::getInstancia()::$lit['portfolio'] ."</a></li>
                                 <li class=\"nav-item mx-0 mx-lg-1\"><a class=\"nav-link py-3 px-0 px-lg-3 rounded\" href=\"#about\">About</a></li>
                                 <li class=\"nav-item mx-0 mx-lg-1\"><a class=\"nav-link py-3 px-0 px-lg-3 rounded\" href=\"#contact\">Contact</a></li>
                             </ul>

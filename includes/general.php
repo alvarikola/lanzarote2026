@@ -15,6 +15,9 @@ spl_autoload_register(function ($class) {
         case 'Template':
             require_once "includes/template.php";
         break;
+        case 'Idioma':
+            require_once "includes/idioma.php";
+        break;
     }
 
 });
