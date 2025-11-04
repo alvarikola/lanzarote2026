@@ -7,189 +7,354 @@ class Portada
     static function pintar()
     {
         return "
-            <!-- Masthead-->
-        <header class=\"masthead bg-primary text-white text-center\">
-            <div class=\"container d-flex align-items-center flex-column\">
-                <!-- Masthead Avatar Image-->
-                <img class=\"masthead-avatar mb-5\" src=\"/assets/plantilla/assets/img/avataaars.svg\" alt=\"...\" />
-                <!-- Masthead Heading-->
-                <h1 class=\"masthead-heading text-uppercase mb-0\">Start Bootstrap</h1>
-                <!-- Icon Divider-->
-                <div class=\"divider-custom divider-light\">
-                    <div class=\"divider-custom-line\"></div>
-                    <div class=\"divider-custom-icon\"><i class=\"fas fa-star\"></i></div>
-                    <div class=\"divider-custom-line\"></div>
-                </div>
-                <!-- Masthead Subheading-->
-                <p class=\"masthead-subheading font-weight-light mb-0\">Graphic Artist - Web Designer - Illustrator</p>
+        <main class=\"main\">
+
+        <!-- Hero Section -->
+    <section id=\"hero\" class=\"hero section accent-background\">
+
+      <div class=\"container position-relative\" data-aos=\"fade-up\" data-aos-delay=\"100\">
+        <div class=\"row gy-5 justify-content-between\">
+          <div class=\"col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center\">
+            <h2><span>Welcome to </span><span class=\"accent\">Impact</span></h2>
+            <p>Sed autem laudantium dolores. Voluptatem itaque ea consequatur eveniet. Eum quas beatae cumque eum quaerat.</p>
+            <div class=\"d-flex\">
+              <a href=\"#about\" class=\"btn-get-started\">Get Started</a>
+              <a href=\"https://www.youtube.com/watch?v=Y7f98aduVJ8\" class=\"glightbox btn-watch-video d-flex align-items-center\"><i class=\"bi bi-play-circle\"></i><span>Watch Video</span></a>
             </div>
-        </header>
-        <!-- Portfolio Section-->
-        <section class=\"page-section portfolio\" id=\"portfolio\">
-            <div class=\"container\">
-                <!-- Portfolio Section Heading-->
-                <h2 class=\"page-section-heading text-center text-uppercase text-secondary mb-0\">Portfolio</h2>
-                <!-- Icon Divider-->
-                <div class=\"divider-custom\">
-                    <div class=\"divider-custom-line\"></div>
-                    <div class=\"divider-custom-icon\"><i class=\"fas fa-star\"></i></div>
-                    <div class=\"divider-custom-line\"></div>
-                </div>
-                <!-- Portfolio Grid Items-->
-                <div class=\"row justify-content-center\">
-                    <!-- Portfolio Item 1-->
-                    <div class=\"col-md-6 col-lg-4 mb-5\">
-                        <div class=\"portfolio-item mx-auto\" data-bs-toggle=\"modal\" data-bs-target=\"#portfolioModal1\">
-                            <div class=\"portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100\">
-                                <div class=\"portfolio-item-caption-content text-center text-white\"><i class=\"fas fa-plus fa-3x\"></i></div>
-                            </div>
-                            <img class=\"img-fluid\" src=\"/assets/plantilla/assets/img/portfolio/cabin.png\" alt=\"...\" />
-                        </div>
-                    </div>
-                    <!-- Portfolio Item 2-->
-                    <div class=\"col-md-6 col-lg-4 mb-5\">
-                        <div class=\"portfolio-item mx-auto\" data-bs-toggle=\"modal\" data-bs-target=\"#portfolioModal2\">
-                            <div class=\"portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100\">
-                                <div class=\"portfolio-item-caption-content text-center text-white\"><i class=\"fas fa-plus fa-3x\"></i></div>
-                            </div>
-                            <img class=\"img-fluid\" src=\"/assets/plantilla/assets/img/portfolio/cake.png\" alt=\"...\" />
-                        </div>
-                    </div>
-                    <!-- Portfolio Item 3-->
-                    <div class=\"col-md-6 col-lg-4 mb-5\">
-                        <div class=\"portfolio-item mx-auto\" data-bs-toggle=\"modal\" data-bs-target=\"#portfolioModal3\">
-                            <div class=\"portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100\">
-                                <div class=\"portfolio-item-caption-content text-center text-white\"><i class=\"fas fa-plus fa-3x\"></i></div>
-                            </div>
-                            <img class=\"img-fluid\" src=\"/assets/plantilla/assets/img/portfolio/circus.png\" alt=\"...\" />
-                        </div>
-                    </div>
-                    <!-- Portfolio Item 4-->
-                    <div class=\"col-md-6 col-lg-4 mb-5 mb-lg-0\">
-                        <div class=\"portfolio-item mx-auto\" data-bs-toggle=\"modal\" data-bs-target=\"#portfolioModal4\">
-                            <div class=\"portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100\">
-                                <div class=\"portfolio-item-caption-content text-center text-white\"><i class=\"fas fa-plus fa-3x\"></i></div>
-                            </div>
-                            <img class=\"img-fluid\" src=\"/assets/plantilla/assets/img/portfolio/game.png\" alt=\"...\" />
-                        </div>
-                    </div>
-                    <!-- Portfolio Item 5-->
-                    <div class=\"col-md-6 col-lg-4 mb-5 mb-md-0\">
-                        <div class=\"portfolio-item mx-auto\" data-bs-toggle=\"modal\" data-bs-target=\"#portfolioModal5\">
-                            <div class=\"portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100\">
-                                <div class=\"portfolio-item-caption-content text-center text-white\"><i class=\"fas fa-plus fa-3x\"></i></div>
-                            </div>
-                            <img class=\"img-fluid\" src=\"/assets/plantilla/assets/img/portfolio/safe.png\" alt=\"...\" />
-                        </div>
-                    </div>
-                    <!-- Portfolio Item 6-->
-                    <div class=\"col-md-6 col-lg-4\">
-                        <div class=\"portfolio-item mx-auto\" data-bs-toggle=\"modal\" data-bs-target=\"#portfolioModal6\">
-                            <div class=\"portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100\">
-                                <div class=\"portfolio-item-caption-content text-center text-white\"><i class=\"fas fa-plus fa-3x\"></i></div>
-                            </div>
-                            <img class=\"img-fluid\" src=\"/assets/plantilla/assets/img/portfolio/submarine.png\" alt=\"...\" />
-                        </div>
-                    </div>
-                </div>
+          </div>
+          <div class=\"col-lg-5 order-1 order-lg-2\">
+            <img src=\"assets/img/hero-img.svg\" class=\"img-fluid\" alt=\"\">
+          </div>
+        </div>
+      </div>
+
+      <div class=\"icon-boxes position-relative\" data-aos=\"fade-up\" data-aos-delay=\"200\">
+        <div class=\"container position-relative\">
+          <div class=\"row gy-4 mt-5\">
+
+            <div class=\"col-xl-3 col-md-6\">
+              <div class=\"icon-box\">
+                <div class=\"icon\"><i class=\"bi bi-easel\"></i></div>
+                <h4 class=\"title\"><a href=\"\" class=\"stretched-link\">Lorem Ipsum</a></h4>
+              </div>
+            </div><!--End Icon Box -->
+
+            <div class=\"col-xl-3 col-md-6\">
+              <div class=\"icon-box\">
+                <div class=\"icon\"><i class=\"bi bi-gem\"></i></div>
+                <h4 class=\"title\"><a href=\"\" class=\"stretched-link\">Sed ut perspiciatis</a></h4>
+              </div>
+            </div><!--End Icon Box -->
+
+            <div class=\"col-xl-3 col-md-6\">
+              <div class=\"icon-box\">
+                <div class=\"icon\"><i class=\"bi bi-geo-alt\"></i></div>
+                <h4 class=\"title\"><a href=\"\" class=\"stretched-link\">Magni Dolores</a></h4>
+              </div>
+            </div><!--End Icon Box -->
+
+            <div class=\"col-xl-3 col-md-6\">
+              <div class=\"icon-box\">
+                <div class=\"icon\"><i class=\"bi bi-command\"></i></div>
+                <h4 class=\"title\"><a href=\"\" class=\"stretched-link\">Nemo Enim</a></h4>
+              </div>
+            </div><!--End Icon Box -->
+
+          </div>
+        </div>
+      </div>
+
+    </section><!-- /Hero Section -->
+
+    <!-- About Section -->
+    <section id=\"about\" class=\"about section\">
+
+      <!-- Section Title -->
+      <div class=\"container section-title\" data-aos=\"fade-up\">
+        <h2>About Us<br></h2>
+        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+      </div><!-- End Section Title -->
+
+      <div class=\"container\">
+
+        <div class=\"row gy-4\">
+          <div class=\"col-lg-6\" data-aos=\"fade-up\" data-aos-delay=\"100\">
+            <h3>Voluptatem dignissimos provident laboris nisi ut aliquip ex ea commodo</h3>
+            <img src=\"assets/Impact-1.0.0/assets/img/about.jpg\" class=\"img-fluid rounded-4 mb-4\" alt=\"\">
+            <p>Ut fugiat ut sunt quia veniam. Voluptate perferendis perspiciatis quod nisi et. Placeat debitis quia recusandae odit et consequatur voluptatem. Dignissimos pariatur consectetur fugiat voluptas ea.</p>
+            <p>Temporibus nihil enim deserunt sed ea. Provident sit expedita aut cupiditate nihil vitae quo officia vel. Blanditiis eligendi possimus et in cum. Quidem eos ut sint rem veniam qui. Ut ut repellendus nobis tempore doloribus debitis explicabo similique sit. Accusantium sed ut omnis beatae neque deleniti repellendus.</p>
+          </div>
+          <div class=\"col-lg-6\" data-aos=\"fade-up\" data-aos-delay=\"250\">
+            <div class=\"content ps-0 ps-lg-5\">
+              <p class=\"fst-italic\">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                magna aliqua.
+              </p>
+              <ul>
+                <li><i class=\"bi bi-check-circle-fill\"></i> <span>Ullamco laboris nisi ut aliquip ex ea commodo consequat.</span></li>
+                <li><i class=\"bi bi-check-circle-fill\"></i> <span>Duis aute irure dolor in reprehenderit in voluptate velit.</span></li>
+                <li><i class=\"bi bi-check-circle-fill\"></i> <span>Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</span></li>
+              </ul>
+              <p>
+                Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+                velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident
+              </p>
+
+              <div class=\"position-relative mt-4\">
+                <img src=\"assets/Impact-1.0.0/assets/img/about-2.jpg\" class=\"img-fluid rounded-4\" alt=\"\">
+                <a href=\"https://www.youtube.com/watch?v=Y7f98aduVJ8\" class=\"glightbox pulsating-play-btn\"></a>
+              </div>
             </div>
-        </section>
-        <!-- About Section-->
-        <section class=\"page-section bg-primary text-white mb-0\" id=\"about\">
-            <div class=\"container\">
-                <!-- About Section Heading-->
-                <h2 class=\"page-section-heading text-center text-uppercase text-white\">About</h2>
-                <!-- Icon Divider-->
-                <div class=\"divider-custom divider-light\">
-                    <div class=\"divider-custom-line\"></div>
-                    <div class=\"divider-custom-icon\"><i class=\"fas fa-star\"></i></div>
-                    <div class=\"divider-custom-line\"></div>
+          </div>
+        </div>
+
+      </div>
+
+    </section><!-- /About Section -->
+
+
+    <!-- Portfolio Section -->
+    <section id=\"portfolio\" class=\"portfolio section\">
+
+      <!-- Section Title -->
+      <div class=\"container section-title\" data-aos=\"fade-up\">
+        <h2>Portfolio</h2>
+        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+      </div><!-- End Section Title -->
+
+      <div class=\"container\">
+
+        <div class=\"isotope-layout\" data-default-filter=\"*\" data-layout=\"masonry\" data-sort=\"original-order\">
+
+          <ul class=\"portfolio-filters isotope-filters\" data-aos=\"fade-up\" data-aos-delay=\"100\">
+            <li data-filter=\"*\" class=\"filter-active\">All</li>
+            <li data-filter=\".filter-app\">App</li>
+            <li data-filter=\".filter-product\">Product</li>
+            <li data-filter=\".filter-branding\">Branding</li>
+            <li data-filter=\".filter-books\">Books</li>
+          </ul><!-- End Portfolio Filters -->
+
+          <div class=\"row gy-4 isotope-container\" data-aos=\"fade-up\" data-aos-delay=\"200\">
+
+            <div class=\"col-lg-4 col-md-6 portfolio-item isotope-item filter-app\">
+              <div class=\"portfolio-content h-100\">
+                <a href=\"assets/Impact-1.0.0/assets/img/portfolio/app-1.jpg\" data-gallery=\"portfolio-gallery-app\" class=\"glightbox\"><img src=\"assets/Impact-1.0.0/assets/img/portfolio/app-1.jpg\" class=\"img-fluid\" alt=\"\"></a>
+                <div class=\"portfolio-info\">
+                  <h4><a href=\"portfolio-details.html\" title=\"More Details\">App 1</a></h4>
+                  <p>Lorem ipsum, dolor sit amet consectetur</p>
                 </div>
-                <!-- About Section Content-->
-                <div class=\"row\">
-                    <div class=\"col-lg-4 ms-auto\"><p class=\"lead\">Freelancer is a free bootstrap theme created by Start Bootstrap. The download includes the complete source files including HTML, CSS, and JavaScript as well as optional SASS stylesheets for easy customization.</p></div>
-                    <div class=\"col-lg-4 me-auto\"><p class=\"lead\">You can create your own custom avatar for the masthead, change the icon in the dividers, and add your email address to the contact form to make it fully functional!</p></div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class=\"col-lg-4 col-md-6 portfolio-item isotope-item filter-product\">
+              <div class=\"portfolio-content h-100\">
+                <a href=\"assets/Impact-1.0.0/assets/img/portfolio/product-1.jpg\" data-gallery=\"portfolio-gallery-app\" class=\"glightbox\"><img src=\"assets/Impact-1.0.0/assets/img/portfolio/product-1.jpg\" class=\"img-fluid\" alt=\"\"></a>
+                <div class=\"portfolio-info\">
+                  <h4><a href=\"portfolio-details.html\" title=\"More Details\">Product 1</a></h4>
+                  <p>Lorem ipsum, dolor sit amet consectetur</p>
                 </div>
-                <!-- About Section Button-->
-                <div class=\"text-center mt-4\">
-                    <a class=\"btn btn-xl btn-outline-light\" href=\"https://startbootstrap.com/theme/freelancer/\">
-                        <i class=\"fas fa-download me-2\"></i>
-                        Free Download!
-                    </a>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class=\"col-lg-4 col-md-6 portfolio-item isotope-item filter-branding\">
+              <div class=\"portfolio-content h-100\">
+                <a href=\"assets/Impact-1.0.0/assets/img/portfolio/branding-1.jpg\" data-gallery=\"portfolio-gallery-app\" class=\"glightbox\"><img src=\"assets/Impact-1.0.0/assets/img/portfolio/branding-1.jpg\" class=\"img-fluid\" alt=\"\"></a>
+                <div class=\"portfolio-info\">
+                  <h4><a href=\"portfolio-details.html\" title=\"More Details\">Branding 1</a></h4>
+                  <p>Lorem ipsum, dolor sit amet consectetur</p>
                 </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class=\"col-lg-4 col-md-6 portfolio-item isotope-item filter-books\">
+              <div class=\"portfolio-content h-100\">
+                <a href=\"assets/Impact-1.0.0/assets/img/portfolio/books-1.jpg\" data-gallery=\"portfolio-gallery-app\" class=\"glightbox\"><img src=\"assets/Impact-1.0.0/assets/img/portfolio/books-1.jpg\" class=\"img-fluid\" alt=\"\"></a>
+                <div class=\"portfolio-info\">
+                  <h4><a href=\"portfolio-details.html\" title=\"More Details\">Books 1</a></h4>
+                  <p>Lorem ipsum, dolor sit amet consectetur</p>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class=\"col-lg-4 col-md-6 portfolio-item isotope-item filter-app\">
+              <div class=\"portfolio-content h-100\">
+                <a href=\"assets/Impact-1.0.0/assets/img/portfolio/app-2.jpg\" data-gallery=\"portfolio-gallery-app\" class=\"glightbox\"><img src=\"assets/Impact-1.0.0/assets/img/portfolio/app-2.jpg\" class=\"img-fluid\" alt=\"\"></a>
+                <div class=\"portfolio-info\">
+                  <h4><a href=\"portfolio-details.html\" title=\"More Details\">App 2</a></h4>
+                  <p>Lorem ipsum, dolor sit amet consectetur</p>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class=\"col-lg-4 col-md-6 portfolio-item isotope-item filter-product\">
+              <div class=\"portfolio-content h-100\">
+                <a href=\"assets/Impact-1.0.0/assets/img/portfolio/product-2.jpg\" data-gallery=\"portfolio-gallery-app\" class=\"glightbox\"><img src=\"assets/Impact-1.0.0/assets/img/portfolio/product-2.jpg\" class=\"img-fluid\" alt=\"\"></a>
+                <div class=\"portfolio-info\">
+                  <h4><a href=\"portfolio-details.html\" title=\"More Details\">Product 2</a></h4>
+                  <p>Lorem ipsum, dolor sit amet consectetur</p>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class=\"col-lg-4 col-md-6 portfolio-item isotope-item filter-branding\">
+              <div class=\"portfolio-content h-100\">
+                <a href=\"assets/Impact-1.0.0/assets/img/portfolio/branding-2.jpg\" data-gallery=\"portfolio-gallery-app\" class=\"glightbox\"><img src=\"assets/Impact-1.0.0/assets/img/portfolio/branding-2.jpg\" class=\"img-fluid\" alt=\"\"></a>
+                <div class=\"portfolio-info\">
+                  <h4><a href=\"portfolio-details.html\" title=\"More Details\">Branding 2</a></h4>
+                  <p>Lorem ipsum, dolor sit amet consectetur</p>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class=\"col-lg-4 col-md-6 portfolio-item isotope-item filter-books\">
+              <div class=\"portfolio-content h-100\">
+                <a href=\"assets/Impact-1.0.0/assets/img/portfolio/books-2.jpg\" data-gallery=\"portfolio-gallery-app\" class=\"glightbox\"><img src=\"assets/Impact-1.0.0/assets/img/portfolio/books-2.jpg\" class=\"img-fluid\" alt=\"\"></a>
+                <div class=\"portfolio-info\">
+                  <h4><a href=\"portfolio-details.html\" title=\"More Details\">Books 2</a></h4>
+                  <p>Lorem ipsum, dolor sit amet consectetur</p>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class=\"col-lg-4 col-md-6 portfolio-item isotope-item filter-app\">
+              <div class=\"portfolio-content h-100\">
+                <a href=\"assets/Impact-1.0.0/assets/img/portfolio/app-3.jpg\" data-gallery=\"portfolio-gallery-app\" class=\"glightbox\"><img src=\"assets/Impact-1.0.0/assets/img/portfolio/app-3.jpg\" class=\"img-fluid\" alt=\"\"></a>
+                <div class=\"portfolio-info\">
+                  <h4><a href=\"portfolio-details.html\" title=\"More Details\">App 3</a></h4>
+                  <p>Lorem ipsum, dolor sit amet consectetur</p>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class=\"col-lg-4 col-md-6 portfolio-item isotope-item filter-product\">
+              <div class=\"portfolio-content h-100\">
+                <a href=\"assets/Impact-1.0.0/assets/img/portfolio/product-3.jpg\" data-gallery=\"portfolio-gallery-app\" class=\"glightbox\"><img src=\"assets/Impact-1.0.0/assets/img/portfolio/product-3.jpg\" class=\"img-fluid\" alt=\"\"></a>
+                <div class=\"portfolio-info\">
+                  <h4><a href=\"portfolio-details.html\" title=\"More Details\">Product 3</a></h4>
+                  <p>Lorem ipsum, dolor sit amet consectetur</p>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class=\"col-lg-4 col-md-6 portfolio-item isotope-item filter-branding\">
+              <div class=\"portfolio-content h-100\">
+                <a href=\"assets/Impact-1.0.0/assets/img/portfolio/branding-3.jpg\" data-gallery=\"portfolio-gallery-app\" class=\"glightbox\"><img src=\"assets/Impact-1.0.0/assets/img/portfolio/branding-3.jpg\" class=\"img-fluid\" alt=\"\"></a>
+                <div class=\"portfolio-info\">
+                  <h4><a href=\"portfolio-details.html\" title=\"More Details\">Branding 3</a></h4>
+                  <p>Lorem ipsum, dolor sit amet consectetur</p>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class=\"col-lg-4 col-md-6 portfolio-item isotope-item filter-books\">
+              <div class=\"portfolio-content h-100\">
+                <a href=\"assets/Impact-1.0.0/assets/img/portfolio/books-3.jpg\" data-gallery=\"portfolio-gallery-app\" class=\"glightbox\"><img src=\"assets/Impact-1.0.0/assets/img/portfolio/books-3.jpg\" class=\"img-fluid\" alt=\"\"></a>
+                <div class=\"portfolio-info\">
+                  <h4><a href=\"portfolio-details.html\" title=\"More Details\">Books 3</a></h4>
+                  <p>Lorem ipsum, dolor sit amet consectetur</p>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+          </div><!-- End Portfolio Container -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Portfolio Section -->
+
+
+    <!-- Contact Section -->
+    <section id=\"contact\" class=\"contact section\">
+
+      <!-- Section Title -->
+      <div class=\"container section-title\" data-aos=\"fade-up\">
+        <h2>Contact</h2>
+        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+      </div><!-- End Section Title -->
+
+      <div class=\"container\" data-aos=\"fade-up\" data-aos-delay=\"100\">
+
+        <div class=\"row gx-lg-0 gy-4\">
+
+          <div class=\"col-lg-4\">
+            <div class=\"info-container d-flex flex-column align-items-center justify-content-center\">
+              <div class=\"info-item d-flex\" data-aos=\"fade-up\" data-aos-delay=\"200\">
+                <i class=\"bi bi-geo-alt flex-shrink-0\"></i>
+                <div>
+                  <h3>Address</h3>
+                  <p>A108 Adam Street, New York, NY 535022</p>
+                </div>
+              </div><!-- End Info Item -->
+
+              <div class=\"info-item d-flex\" data-aos=\"fade-up\" data-aos-delay=\"300\">
+                <i class=\"bi bi-telephone flex-shrink-0\"></i>
+                <div>
+                  <h3>Call Us</h3>
+                  <p>+1 5589 55488 55</p>
+                </div>
+              </div><!-- End Info Item -->
+
+              <div class=\"info-item d-flex\" data-aos=\"fade-up\" data-aos-delay=\"400\">
+                <i class=\"bi bi-envelope flex-shrink-0\"></i>
+                <div>
+                  <h3>Email Us</h3>
+                  <p>info@example.com</p>
+                </div>
+              </div><!-- End Info Item -->
+
+              <div class=\"info-item d-flex\" data-aos=\"fade-up\" data-aos-delay=\"500\">
+                <i class=\"bi bi-clock flex-shrink-0\"></i>
+                <div>
+                  <h3>Open Hours:</h3>
+                  <p>Mon-Sat: 11AM - 23PM</p>
+                </div>
+              </div><!-- End Info Item -->
+
             </div>
-        </section>
-        <!-- Contact Section-->
-        <section class=\"page-section\" id=\"contact\">
-            <div class=\"container\">
-                <!-- Contact Section Heading-->
-                <h2 class=\"page-section-heading text-center text-uppercase text-secondary mb-0\">Contact Me</h2>
-                <!-- Icon Divider-->
-                <div class=\"divider-custom\">
-                    <div class=\"divider-custom-line\"></div>
-                    <div class=\"divider-custom-icon\"><i class=\"fas fa-star\"></i></div>
-                    <div class=\"divider-custom-line\"></div>
+
+          </div>
+
+          <div class=\"col-lg-8\">
+            <form action=\"forms/contact.php\" method=\"post\" class=\"php-email-form\" data-aos=\"fade\" data-aos-delay=\"100\">
+              <div class=\"row gy-4\">
+
+                <div class=\"col-md-6\">
+                  <input type=\"text\" name=\"name\" class=\"form-control\" placeholder=\"Your Name\" required=\"\">
                 </div>
-                <!-- Contact Section Form-->
-                <div class=\"row justify-content-center\">
-                    <div class=\"col-lg-8 col-xl-7\">
-                        <!-- * * * * * * * * * * * * * * *-->
-                        <!-- * * SB Forms Contact Form * *-->
-                        <!-- * * * * * * * * * * * * * * *-->
-                        <!-- This form is pre-integrated with SB Forms.-->
-                        <!-- To make this form functional, sign up at-->
-                        <!-- https://startbootstrap.com/solution/contact-forms-->
-                        <!-- to get an API token!-->
-                        <form id=\"contactForm\" data-sb-form-api-token=\"API_TOKEN\">
-                            <!-- Name input-->
-                            <div class=\"form-floating mb-3\">
-                                <input class=\"form-control\" id=\"name\" type=\"text\" placeholder=\"Enter your name...\" data-sb-validations=\"required\" />
-                                <label for=\"name\">Full name</label>
-                                <div class=\"invalid-feedback\" data-sb-feedback=\"name:required\">A name is required.</div>
-                            </div>
-                            <!-- Email address input-->
-                            <div class=\"form-floating mb-3\">
-                                <input class=\"form-control\" id=\"email\" type=\"email\" placeholder=\"name@example.com\" data-sb-validations=\"required,email\" />
-                                <label for=\"email\">Email address</label>
-                                <div class=\"invalid-feedback\" data-sb-feedback=\"email:required\">An email is required.</div>
-                                <div class=\"invalid-feedback\" data-sb-feedback=\"email:email\">Email is not valid.</div>
-                            </div>
-                            <!-- Phone number input-->
-                            <div class=\"form-floating mb-3\">
-                                <input class=\"form-control\" id=\"phone\" type=\"tel\" placeholder=\"(123) 456-7890\" data-sb-validations=\"required\" />
-                                <label for=\"phone\">Phone number</label>
-                                <div class=\"invalid-feedback\" data-sb-feedback=\"phone:required\">A phone number is required.</div>
-                            </div>
-                            <!-- Message input-->
-                            <div class=\"form-floating mb-3\">
-                                <textarea class=\"form-control\" id=\"message\" type=\"text\" placeholder=\"Enter your message here...\" style=\"height: 10rem\" data-sb-validations=\"required\"></textarea>
-                                <label for=\"message\">Message</label>
-                                <div class=\"invalid-feedback\" data-sb-feedback=\"message:required\">A message is required.</div>
-                            </div>
-                            <!-- Submit success message-->
-                            <!---->
-                            <!-- This is what your users will see when the form-->
-                            <!-- has successfully submitted-->
-                            <div class=\"d-none\" id=\"submitSuccessMessage\">
-                                <div class=\"text-center mb-3\">
-                                    <div class=\"fw-bolder\">Form submission successful!</div>
-                                    To activate this form, sign up at
-                                    <br />
-                                    <a href=\"https://startbootstrap.com/solution/contact-forms\">https://startbootstrap.com/solution/contact-forms</a>
-                                </div>
-                            </div>
-                            <!-- Submit error message-->
-                            <!---->
-                            <!-- This is what your users will see when there is-->
-                            <!-- an error submitting the form-->
-                            <div class=\"d-none\" id=\"submitErrorMessage\"><div class=\"text-center text-danger mb-3\">Error sending message!</div></div>
-                            <!-- Submit Button-->
-                            <button class=\"btn btn-primary btn-xl disabled\" id=\"submitButton\" type=\"submit\">Send</button>
-                        </form>
-                    </div>
+
+                <div class=\"col-md-6 \">
+                  <input type=\"email\" class=\"form-control\" name=\"email\" placeholder=\"Your Email\" required=\"\">
                 </div>
-            </div>
-        </section>
+
+                <div class=\"col-md-12\">
+                  <input type=\"text\" class=\"form-control\" name=\"subject\" placeholder=\"Subject\" required=\"\">
+                </div>
+
+                <div class=\"col-md-12\">
+                  <textarea class=\"form-control\" name=\"message\" rows=\"8\" placeholder=\"Message\" required=\"\"></textarea>
+                </div>
+
+                <div class=\"col-md-12 text-center\">
+                  <div class=\"loading\">Loading</div>
+                  <div class=\"error-message\"></div>
+                  <div class=\"sent-message\">Your message has been sent. Thank you!</div>
+
+                  <button type=\"submit\">Send Message</button>
+                </div>
+
+              </div>
+            </form>
+          </div><!-- End Contact Form -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Contact Section -->
+
+  </main>
         ";
 
 
