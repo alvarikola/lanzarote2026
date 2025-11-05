@@ -13,6 +13,7 @@ class Idioma
         $descriptor = fopen($_SERVER['DOCUMENT_ROOT'] .'/lang/es.txt','r');
 
         if ($descriptor) {
+
             while($linea = fgets($descriptor)) {
                 $linea = trim($linea);
 
@@ -29,6 +30,12 @@ class Idioma
         }
 
         return self::$instancia;
+    }
+
+    static function lit($campo)
+    {
+        self::getInstancia();
+        return self::$lit[$campo];
     }
 
     public function __clone(){}
