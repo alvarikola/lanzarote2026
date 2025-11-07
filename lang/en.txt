@@ -1,2 +1,23 @@
 hola:hello
 adios:bye
+inicio:Home
+portfolio:Portfolio
+acercade:About us
+contacto:Contact
+titulo:List
+titulocons:Consult
+tituloalta:Registration
+titulomodi:Modification
+titulobaja:Leave
+enviar:Send
+nick:Nick
+pseudonimo:Pseudonym
+password:Password
+nombre:Name
+escribe_tu_nombre:Write your name...
+apellidos:Last name
+escribe_tus_apellidos:Write your last name
+email:E-mail
+valor_obligatorio:Required Field
+operacion_exito:Operation successfully
+usuarios:Users
