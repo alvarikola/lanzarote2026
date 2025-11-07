@@ -1,5 +1,6 @@
 hola:hola
 adios:adios
+inicio:Inicio
 portfolio:Portfolio
 acercade:Acerca de
 contacto:Contacto
@@ -19,3 +20,4 @@ escribe_tus_apellidos:Escribe tus apellidos...
 email:E-mail
 valor_obligatorio:Campo obligatorio
 operacion_exito:Operación realizada con éxito
+usuarios:Usuarios
