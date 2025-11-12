@@ -45,6 +45,12 @@ spl_autoload_register(function ($class) {
         case 'Campo':
             require_once "includes/campo.php";
         break;
+        case 'Elemento':
+            require_once "includes/elementos/elemento.php";
+        break;
+        case 'Text':
+            require_once "includes/elementos/text.php";
+        break;
     }
 
 });

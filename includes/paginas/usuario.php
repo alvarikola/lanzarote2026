@@ -1,15 +1,20 @@
 <?php
 
 
+define('BOTON_ENVIAR',"<button type=\"submit\" class=\"btn btn-primary\">". Idioma::lit('enviar'.Campo::val('oper'))."</button>");
 
 class Usuario
 {
 
-
+    static $nick;
 
     static function pintar()
     {
         $contenido = '';
+        $volver = "<a style=\"float:right\" href=\"/usuarios/\" class=\"btn btn-light\"><i class=\"bi bi-arrow-return-left\"></i> ".Idioma::lit('volver')."</a>";
+
+        self::inicializacion_campos();
+
         switch(Campo::val('oper'))
         {
             case 'cons':
@@ -26,6 +31,7 @@ class Usuario
             break;
             default:
                 $contenido = self::listado();
+                $volver = '';
             break;
         }
       
@@ -33,14 +39,12 @@ class Usuario
 
 
 
-
-
-
         return "
         <div class=\"container contenido\">
         <section class=\"page-section usuarios\" id=\"usuarios\">
-            <h1>". Idioma::lit('titulo'.Campo::val('oper')) ."</h1>
+            <h1>". Idioma::lit('titulo'.Campo::val('oper'))." ". Idioma::lit(Campo::val('seccion')) ."</h1>
             {$contenido}
+            {$volver}
         </section>
         </div>
         
@@ -48,6 +52,14 @@ class Usuario
 
 
     }
+
+
+    static function inicializacion_campos()
+    {
+        self::$nick = new Text(['nombre' => 'nick']);
+
+    }
+
 
     static function validacion()
     {
@@ -58,20 +70,8 @@ class Usuario
         if(Campo::val('paso'))
         {
 
+            self::$nick->validar();
 
-            if(empty(Campo::val('nick')))
-            {
-                /*
-                $errores->literal_error_nick = ' <span class="error">'. Idioma::lit('valor_obligatorio') .'</span>';
-                $errores->style_error_nick = 'error';
-                $errores->numero_errores++;
-                */
-
-                $errores['literal_error_nick'] = ' <span class="error">'. Idioma::lit('valor_obligatorio') .'</span>';
-                $errores['style_error_nick']   = 'error';
-                $errores['cantidad']++;
-
-            }
 
             if(empty(Campo::val('password')))
             {
@@ -108,17 +108,16 @@ class Usuario
 
     static function formulario($boton_enviar='',$errores=[],$mensaje_exito='',$disabled='')
     {
+        self::$nick->disabled = $disabled;
+
         return "
         {$mensaje_exito}
-        <form action=\"/?seccion=usuarios\" method=\"POST\">
+        <form action=\"/usuarios/\" method=\"POST\">
             <input type=\"hidden\" name=\"paso\" value=\"1\" />
             <input type=\"hidden\" name=\"oper\" value=\"". Campo::val('oper') ."\" />
             <input type=\"hidden\" name=\"id\"   value=\"". Campo::val('id') ."\" />
-            <div class=\"mb-3\">
-                <label for=\"idnick\" class=\"form-label\">". Idioma::lit('nick')."</label>
-                {$errores['literal_error_nick']}
-                <input {$disabled} value=\"". Campo::val('nick') ."\" name=\"nick\" type=\"text\" class=\"{$errores['style_error_nick']} form-control\" id=\"idnick\" placeholder=\"". Idioma::lit('pseudonimo')."\">
-            </div>
+            ". self::$nick->pintar() ."
+
             <div class=\"mb-3\">
                 <label for=\"idpassword\" class=\"form-label\">". Idioma::lit('password')."</label>
                 {$errores['literal_error_password']}
@@ -173,7 +172,7 @@ class Usuario
 
     static function modi()
     {
-        $boton_enviar = "<button type=\"submit\" class=\"btn btn-primary\">". Idioma::lit('enviar')."</button>";
+        $boton_enviar = BOTON_ENVIAR;
         $errores = [];
         $mensaje_exito='';
         $disabled='';
@@ -231,7 +230,7 @@ class Usuario
             ,email         VARCHAR(255)
             ,password      VARCHAR(255)
         */
-        $boton_enviar = "<button type=\"submit\" class=\"btn btn-primary\">". Idioma::lit('enviar')."</button>";
+        $boton_enviar = BOTON_ENVIAR;
         $errores = [];
         $mensaje_exito='';
         $disabled='';
@@ -274,10 +273,10 @@ class Usuario
     }
 
     static function baja() {
-        $boton_enviar = "<button type=\"submit\" class=\"btn btn-primary\">". Idioma::lit('enviar')."</button>";
+        $boton_enviar = BOTON_ENVIAR;
         $errores = [];
         $mensaje_exito='';
-        $disabled='';
+        $disabled =" disabled=\"disabled\" ";
         if(!Campo::val('paso'))
         {
             $query = new Query("
@@ -288,20 +287,18 @@ class Usuario
 
             $registro = $query->recuperar();
 
-            $disabled =" disabled=\"disabled\" ";
-
             self::sincro_form_bbdd($registro);
 
         }
         else
         {
             $query = new Query("
-                DELETE FROM usuarios
+                UPDATE usuarios
+                SET  fecha_baja = CURRENT_DATE
                 WHERE id = '". Campo::val('id') ."';
             ");
             $mensaje_exito = '<p class="centrado alert alert-success" >' . Idioma::lit('operacion_exito') .  '</p>';
 
-            $disabled =" disabled=\"disabled\" ";
             $boton_enviar = '';
 
         }
@@ -325,6 +322,7 @@ class Usuario
         $query = new Query("
             SELECT * 
             FROM   usuarios
+            WHERE fecha_baja > CURRENT_DATE
 
             ORDER BY nick
             limit ". LISTADO_TOTAL_POR_PAGINA ."
@@ -340,9 +338,9 @@ class Usuario
         {
 
             $botonera = "
-                <a href=\"/?seccion=usuarios&oper=cons&id={$registro['id']}\" class=\"btn btn-secondary\"><i class=\"bi bi-search\"></i></a>
-                <a href=\"/?seccion=usuarios&oper=modi&id={$registro['id']}\" class=\"btn btn-primary\"><i class=\"bi bi-pencil-square\"></i></a>
-                <a href=\"/?seccion=usuarios&oper=baja&id={$registro['id']}\" class=\"btn btn-danger\"><i class=\"bi bi-trash\"></i></a>
+                <a href=\"/usuarios/cons/{$registro['id']}\" class=\"btn btn-secondary\"><i class=\"bi bi-search\"></i></a>
+                <a href=\"/usuarios/modi/{$registro['id']}\" class=\"btn btn-primary\"><i class=\"bi bi-pencil-square\"></i></a>
+                <a href=\"/usuarios/baja/{$registro['id']}\" class=\"btn btn-danger\"><i class=\"bi bi-trash\"></i></a>
             ";
 
             $listado_usuarios .= "
@@ -381,7 +379,7 @@ class Usuario
             </tbody>
             </table>
             {$barra_navegacion}
-            <a href=\"/?seccion=usuarios&oper=alta&id=\" class=\"btn btn-primary\"><i class=\"bi bi-file-earmark-plus\"></i> Alta usuario</a>
+            <a href=\"/usuarios/alta\" class=\"btn btn-primary\"><i class=\"bi bi-file-earmark-plus\"></i> Alta usuario</a>
             ";
 
     }

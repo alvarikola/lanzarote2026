@@ -31,7 +31,7 @@
             <li><a href="#about">{{ acercade }}</a></li>
             <li><a href="#portfolio">{{ portfolio }}</a></li>
             <li><a href="#contact">{{ contacto }}</a></li>
-            <li><a href="/?seccion=usuarios">{{ usuarios }}</a></li>
+            <li><a href="/usuarios/">{{ usuarios }}</a></li>
             </ul>
             <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>
