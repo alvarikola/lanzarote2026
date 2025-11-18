@@ -65,11 +65,11 @@
             switch($seccion)
             {
                 case 'usuarios':
-                    $contenido = Usuario::pintar();
+                    $contenido = UsuarioController::pintar();
                 break;
 
                 default:
-                    $contenido = Portada::pintar();
+                    $contenido = PortadaController::pintar();
                 break;
             }
 
