@@ -82,7 +82,7 @@ class Base
         $updates = '';
         foreach($datos as $clave => $valor)
         {
-            $updates = "{$clave} = '{$valor}',";
+            $updates .= "{$clave} = '{$valor}',";
         }
 
         $sql = "
