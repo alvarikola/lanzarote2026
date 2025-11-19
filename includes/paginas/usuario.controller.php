@@ -8,10 +8,14 @@ class UsuarioController
 
     static $nick,$password,$oper,$id,$paso,$nombre,$apellidos,$email;
 
+
     static function pintar()
     {
         $contenido = '';
         $volver = "<a style=\"float:right\" href=\"/usuarios/\" class=\"btn btn-light\"><i class=\"bi bi-arrow-return-left\"></i> ".Idioma::lit('volver')."</a>";
+
+
+
 
         self::inicializacion_campos();
 
@@ -34,11 +38,11 @@ class UsuarioController
                 $volver = '';
             break;
         }
+
       
+        
 
-
-
-
+      
         return "
         <div class=\"container contenido\">
         <section class=\"page-section usuarios\" id=\"usuarios\">
@@ -52,7 +56,6 @@ class UsuarioController
 
 
     }
-
 
     static function inicializacion_campos()
     {
@@ -76,6 +79,7 @@ class UsuarioController
 
     }
 
+
     static function formulario($boton_enviar='',$errores=[],$mensaje_exito='',$disabled='')
     {
         Formulario::disabled($disabled);
@@ -94,13 +98,8 @@ class UsuarioController
 
     static function cons()
     {
-        $query = new Query("
-            SELECT *
-            FROM   usuarios
-            WHERE  id = '". Campo::val('id') ."'
-        ");
-
-        $registro = $query->recuperar();
+        $usuario = new Usuario();
+        $registro = $usuario->recuperar(Campo::val('id'));
 
         self::sincro_form_bbdd($registro);
 
@@ -115,25 +114,22 @@ class UsuarioController
         $disabled =" disabled=\"disabled\" ";
         if(!Campo::val('paso'))
         {
-            $query = new Query("
-                SELECT *
-                FROM   usuarios
-                WHERE  id = '". Campo::val('id') ."'
-            ");
-
-            $registro = $query->recuperar();
+            $usuario = new Usuario();
+            $registro = $usuario->recuperar(Campo::val('id'));
 
             self::sincro_form_bbdd($registro);
 
         }
         else
         {
-            $query = new Query("
-                UPDATE usuarios
-                SET  fecha_baja = CURRENT_DATE
-                WHERE id = '". Campo::val('id') ."';
-            
-            ");
+
+            $usuario = new Usuario();
+
+            $datos_actualizar = [];
+            $datos_actualizar['fecha_baja'] = date('Ymd');
+
+            $usuario->actualizar($datos_actualizar,Campo::val('id'));
+
             $mensaje_exito = '<p class="centrado alert alert-success" >' . Idioma::lit('operacion_exito') .  '</p>';
 
             $boton_enviar = '';
@@ -150,13 +146,9 @@ class UsuarioController
         $disabled='';
         if(!Campo::val('paso'))
         {
-            $query = new Query("
-                SELECT *
-                FROM   usuarios
-                WHERE  id = '". Campo::val('id') ."'
-            ");
+            $usuario = new Usuario();
+            $registro = $usuario->recuperar(Campo::val('id'));
 
-            $registro = $query->recuperar();
 
             self::sincro_form_bbdd($registro);
 
@@ -168,18 +160,17 @@ class UsuarioController
 
             if(!$numero_errores)
             {
+                $usuario = new Usuario();
 
+                $datos_actualizar = [];
+                $datos_actualizar['nick']      = Campo::val('nick');
+                $datos_actualizar['nombre']    = Campo::val('nombre');
+                $datos_actualizar['apellidos'] = Campo::val('apellidos');
+                $datos_actualizar['email']     = Campo::val('email');
+                $datos_actualizar['password']  = Campo::val('password');
 
-                $query = new Query("
-                    UPDATE usuarios
-                    SET  nick      = '". Campo::val('nick')      ."'
-                        ,nombre    = '". Campo::val('nombre')    ."'
-                        ,apellidos = '". Campo::val('apellidos') ."'
-                        ,email     = '". Campo::val('email')     ."'
-                        ,password  = '". Campo::val('password')  ."'
-                    WHERE id = '". Campo::val('id') ."';
-                
-                ");
+                $usuario->actualizar($datos_actualizar,Campo::val('id'));
+
                 $mensaje_exito = '<p class="centrado alert alert-success" >' . Idioma::lit('operacion_exito') .  '</p>';
 
                 $disabled =" disabled=\"disabled\" ";
@@ -223,25 +214,7 @@ class UsuarioController
                 $usuario = new Usuario();
                 $usuario->insertar($nuevo_usuario);
 
-                $query = new Query("
-                    INSERT INTO usuarios
-                    (
-                         nick        
-                        ,nombre      
-                        ,apellidos   
-                        ,email       
-                        ,password    
-                    )
-                    VALUES
-                    (
-                         '". Campo::val('nick')      ."'
-                        ,'". Campo::val('nombre')    ."'
-                        ,'". Campo::val('apellidos') ."'
-                        ,'". Campo::val('email')     ."'
-                        ,'". Campo::val('password')  ."'
-                    );
-                
-                ");
+              
                 $mensaje_exito = '<p class="centrado alert alert-success" >' . Idioma::lit('operacion_exito') .  '</p>';
 
                 $disabled =" disabled=\"disabled\" ";
@@ -268,23 +241,20 @@ class UsuarioController
         }
         $pagina++;
 
+        $usuario = new Usuario();
 
-        $query = new Query("
-            SELECT * 
-            FROM   usuarios
-            WHERE fecha_baja > CURRENT_DATE
-
-            ORDER BY nick
-            limit ". LISTADO_TOTAL_POR_PAGINA ."
-            offset {$offset}
-            
-
-        ");
-
+        $datos_consulta = $usuario->get_rows([
+             'wheremayor' => [
+                'fecha_baja' => date('Ymd')
+            ]
+            ,'limit'  => LISTADO_TOTAL_POR_PAGINA
+            ,'offset' => $offset
+        ]);
 
 
         $listado_usuarios= '';
-        while ($registro = $query->recuperar())
+        $total_registros = 0;
+        foreach($datos_consulta as $indice => $registro)
         {
 
             $botonera = "
@@ -305,10 +275,11 @@ class UsuarioController
                 </tr>
             ";
 
+            $total_registros++;
         }
 
 
-        $barra_navegacion = Template::navegacion($query->total,$pagina);
+        $barra_navegacion = Template::navegacion($total_registros,$pagina);
 
 
         return "
