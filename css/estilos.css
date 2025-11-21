@@ -24,3 +24,16 @@ input.error{
 .disabled{
     background-color: #ebebeb;
 }
+
+
+/*
+Ventana emergente
+
+position: absolute;
+width: 400px;
+height: 500px;
+display: block;
+top: 200px;
+background: #ccc;
+left: 600px;
+*/
