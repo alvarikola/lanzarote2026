@@ -82,5 +82,7 @@
 <!-- Main JS File -->
 <script src="/assets/Impact-1.0.0/assets/js/main.js"></script>
 
+<!-- Script propios-->
+<script src="/js/main.js"></script>
 </body>
 </html>
