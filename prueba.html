@@ -33,7 +33,7 @@
         <button onclick="fetchText()">Cargar Datos Sin JSON</button>
 
         <div id="loading">
-            <img src="/img/loading.gif" alt="Cargando..." width="50">
+            <img src="/imagenes/loading.gif" alt="Cargando..." width="50">
         </div>
 
         <div id="result">
