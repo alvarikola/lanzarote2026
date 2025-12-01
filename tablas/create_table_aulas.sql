@@ -5,6 +5,12 @@ CREATE TABLE aulas (
     numero  INT NOT NULL UNIQUE,                   
     planta  CHAR(1),                                
 
+    usuario_alta      VARCHAR(255),
+    ip_alta           CHAR(15),
+    fecha_sis_alta    TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    usuario_modi      VARCHAR(255),
+    ip_modi           CHAR(15),
+    fecha_modi        TIMESTAMP
 );
 
 -- Comentarios explicativos:

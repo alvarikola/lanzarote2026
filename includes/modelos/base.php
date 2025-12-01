@@ -157,5 +157,17 @@ class Base
 
     }
 
+    function query_custom($sql)
+    {
+        $query = new Query($sql);
+
+        $resultado = [];
+        while($registro = $query->recuperar())
+        {
+            $resultado[] = $registro;
+        }
+
+        return $resultado;
+    }
 
 }

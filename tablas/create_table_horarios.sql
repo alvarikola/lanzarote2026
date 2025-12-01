@@ -10,8 +10,14 @@ CREATE TABLE horarios (
     
     FOREIGN KEY (id_modulo) REFERENCES modulos(id),     
     FOREIGN KEY (id_profesor) REFERENCES personas(id),  
-    FOREIGN KEY (id_aula) REFERENCES aulas(id)          
+    FOREIGN KEY (id_aula) REFERENCES aulas(id),        
 
+    usuario_alta      VARCHAR(255),
+    ip_alta           CHAR(15),
+    fecha_sis_alta    TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    usuario_modi      VARCHAR(255),
+    ip_modi           CHAR(15),
+    fecha_modi        TIMESTAMP
 );
 
 -- id                  INT AUTO_INCREMENT PRIMARY KEY,   ID único para cada horario

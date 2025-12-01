@@ -49,6 +49,7 @@
                ,'contacto'  => Idioma::lit('contacto')
                ,'usuarios'  => Idioma::lit('usuarios')
                ,'inicio'  => Idioma::lit('inicio')
+               ,'calendario'  => Idioma::lit('calendario')
             ]);
         }
 
@@ -66,6 +67,10 @@
             {
                 case 'usuarios':
                     $contenido = UsuarioController::pintar();
+                break;
+
+                case 'calendario':
+                    $contenido = CalendarioController::pintar();
                 break;
 
                 default:

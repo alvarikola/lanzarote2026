@@ -3,7 +3,14 @@ CREATE TABLE cursos (
     nombre_grado    VARCHAR(50) NOT NULL,           
     curso_numero    INT NOT NULL,                   
     letra           CHAR(1) NOT NULL,               
-    UNIQUE(nombre_grado, curso_numero, letra)       
+    UNIQUE(nombre_grado, curso_numero, letra),
+
+    usuario_alta      VARCHAR(255),
+    ip_alta           CHAR(15),
+    fecha_sis_alta    TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    usuario_modi      VARCHAR(255),
+    ip_modi           CHAR(15),
+    fecha_modi        TIMESTAMP       
 );
 
 -- nombre_grado    VARCHAR(50) NOT NULL,      Ej: "DAW", "DAM"

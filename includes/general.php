@@ -69,5 +69,11 @@ spl_autoload_register(function ($class) {
         case 'Usuario':
                 require_once "includes/modelos/usuario.php";
         break;
+        case 'CalendarioController':
+                require_once "includes/paginas/calendario.controller.php";
+        break;
+        case 'Horario':
+                require_once "includes/modelos/horario.php";
+        break;
     }
 });

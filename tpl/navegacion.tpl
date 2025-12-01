@@ -32,6 +32,7 @@
             <li><a href="#portfolio">{{ portfolio }}</a></li>
             <li><a href="#contact">{{ contacto }}</a></li>
             <li><a href="/usuarios/">{{ usuarios }}</a></li>
+            <li><a href="/calendario/">{{ calendario }}</a></li>
             </ul>
             <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>
