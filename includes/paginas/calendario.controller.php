@@ -111,6 +111,7 @@ class CalendarioController
 
             $listado_horarios .= "
                 <tr>
+                    <td>{$registro['dia']}</td>
                     <td>{$registro['hora_inicio']}</td>
                     <td>{$registro['hora_fin']}</td>
                     <td>{$registro['nombre_modulo']}</td>
@@ -130,6 +131,7 @@ class CalendarioController
             <table class=\"table\">
             <thead>
                 <tr>
+                <th scope=\"col\">dia</th>
                 <th scope=\"col\">hora_inicio</th>
                 <th scope=\"col\">hora_fin</th>
                 <th scope=\"col\">nombre_modulo</th>
